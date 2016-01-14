@@ -9,6 +9,6 @@ urlpatterns = [
     url(r'^create/$', post_create),
     url(r'^(?P<id>\d+)/$', post_detail),
     url(r'^update/$', post_update),
-    url(r'^delete/$', post_delete),
+    url(r'^delete/$', ),
     #url(r'^admin/', <app_name>.views.<function_view>),
 ]
