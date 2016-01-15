@@ -1,7 +1,8 @@
-<!--DOCTYPE html -->
+{% extends "base.html" %}
 
-<html>
-<body>
+{% block content %}
+
+
 <h1> {{ title }} is working </h1>
 
 
@@ -15,5 +16,6 @@
 {{ obj.id }} <br/>
 
 {% endfor %}
-</body>
-</html>
+
+
+{% endblock content %}
