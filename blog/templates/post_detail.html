@@ -2,6 +2,14 @@
 
 <html>
 <body>
+
+{% If messages%}
+<ul class = "message">
+    {% For post in messages%}
+    <li {% if%} message.tags class = "{{}} message.tags" {% endif%}> {{message}} </ li>
+    {% Endfor%}
+</ ul>
+{% Endif%}
 <h1> {{ title }}</h1>
 
 

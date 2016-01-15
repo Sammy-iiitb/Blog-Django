@@ -1,3 +1,4 @@
+from djano.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
@@ -9,7 +10,11 @@ def post_create(request):
     if form.is_valid():
         instance = form.save(commit = False)
         instance.save()
+        #mesage success
+        message.success(request, "Successfully Created")
         return HttpResponseRedirect(instance.get_absolute_url())
+    else :
+        return message.error(request, "Not Successfully Created")
     #if request.method = "POST"
     #    print request.POST.get("content")
     # setting context to post_form.html
@@ -47,6 +52,7 @@ def post_update(request, id=None):
     if form.is_valid():
         instance = form.save(commit = False)
         instance.save()
+        message.success(request, "Item Saved", extra_tags='some-tag')
     return HttpResponseRedirect(instance.get_absolute_url())
     context = {
         "title" : instance.title,
